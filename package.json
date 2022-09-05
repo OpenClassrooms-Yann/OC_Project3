@@ -1,0 +1,22 @@
+{
+  "name": "oc_project3",
+  "version": "1.0.0",
+  "description": "Dynamisez une page web avec des animations CSS\r # author: Yann N'DA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenClassrooms-Yann/OC_Project3.git"
+  },
+  "author": "iGrecA2N",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenClassrooms-Yann/OC_Project3/issues"
+  },
+  "homepage": "https://github.com/OpenClassrooms-Yann/OC_Project3#readme",
+  "dependencies": {
+    "sass": "^1.54.8"
+  }
+}
