@@ -1,52 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
+span.notification {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: block;
+  background-color: #99E2D0;
+  color: #278870;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 12px 6px 12px;
+  border-radius: 2px;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
+.like {
+  display: block;
+  text-align: right;
+  margin-right: 5px;
 }
-
-.title {
-  font-family: "Shrikhand", cursive;
-}
-
-h1, h2 {
-  font-size: 28px;
-  font-weight: 900;
-}
-
-h3 {
-  font-size: 20px;
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
+.like::before {
+  content: "\f004";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 27px;
   color: black;
+  transition: 0.4s;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  cursor: pointer;
+}
+.like:hover::before {
+  font-weight: 600;
+  color: transparent;
 }
 
-div.section-container, div.container {
-  width: 100%;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 1120px) {
-  h1, h2 {
-    font-size: 40px;
-  }
-  h3 {
-    font-size: 28px;
-  }
-  div.section-container, div.container {
-    max-width: calc(100% - 100px);
-  }
-}
 div.loading {
   width: 100%;
   height: 100vh;
@@ -287,28 +274,54 @@ div.loading {
     clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
   }
 }
-div.logo {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0 15px;
-  box-shadow: 0px 0px 8px 0px #9e9e9e;
-  position: relative;
-}
-div.logo a {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 70px;
-  padding: 10px;
-  font-size: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  font-family: "Shrikhand", cursive;
+}
+
+h1, h2 {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+div.section-container, .container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1120px) {
+  h1, h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  div.section-container, .container {
+    max-width: calc(100% - 100px);
+  }
+}
 div.location {
   display: flex;
   width: 100%;
@@ -494,42 +507,60 @@ section.restaurants article.card:hover {
   }
 }
 
-div.heart {
-  display: block;
-  text-align: right;
-  margin-right: 5px;
+div.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 15px;
+  box-shadow: 0px 0px 8px 0px #9e9e9e;
+  position: relative;
 }
-div.heart::before {
-  content: "\f004";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 400;
-  font-size: 27px;
-  color: black;
-  transition: 0.4s;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  cursor: pointer;
-}
-div.heart:hover::before {
-  font-weight: 600;
-  color: transparent;
-}
-
-span.notification {
+div.logo a {
   position: absolute;
-  right: 15px;
-  top: 15px;
-  display: block;
-  background-color: #99E2D0;
-  color: #278870;
-  font-weight: 500;
-  font-size: 15px;
-  padding: 8px 12px 6px 12px;
-  border-radius: 2px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 70px;
+  padding: 10px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+div.location {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(234, 234, 234);
+  position: relative;
+  z-index: -1;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 20px 0 15px 0;
+}
+div.location i {
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 1120px) {
+  div.logo {
+    padding: 20px;
+  }
+  div.logo img {
+    width: 250px;
+  }
+  div.location {
+    font-size: 25px;
+    padding: 20px 0 15px 0;
+  }
+}
 footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: rgb(53, 53, 53);
   padding: 30px 25px;
 }
@@ -548,6 +579,193 @@ footer a {
 footer a i {
   width: 25px;
   font-size: 12px;
+}
+footer div.links {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+footer div.links:nth-child(n) {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  footer div.links {
+    flex-direction: row;
+  }
+}
+.banner_image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  z-index: -1;
+}
+
+section.menu {
+  display: block;
+  background-color: rgb(234, 234, 234);
+  border-radius: 45px 45px 0 0;
+  margin-top: -60px;
+  padding: 25px;
+  position: relative;
+}
+section.menu div.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.menu div.heading h1.title {
+  font-size: 30px;
+}
+section.menu section.submenu {
+  margin-top: 35px;
+  animation: showsubmenu 1s forwards;
+  opacity: 0;
+}
+section.menu section.submenu:nth-child(2) {
+  animation-delay: 0s;
+}
+section.menu section.submenu:nth-child(3) {
+  animation-delay: 0.5s;
+}
+section.menu section.submenu:nth-child(4) {
+  animation-delay: 1s;
+}
+section.menu p.subtitle {
+  font-size: 17px;
+}
+section.menu p.subtitle::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 4px;
+  background-color: #99E2D0;
+  margin-top: 5px;
+}
+section.menu article.meal {
+  cursor: pointer;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px 0px #dddddd;
+  transition: all 0.25 ease-in 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+  padding-left: 15px;
+  margin-top: 15px;
+  opacity: 0;
+  animation: showarticles 1s forwards 1.3s;
+}
+section.menu article.meal:nth-child(1) {
+  animation-delay: 0s;
+}
+section.menu article.meal:nth-child(2) {
+  animation-delay: 0.25s;
+}
+section.menu article.meal:nth-child(3) {
+  animation-delay: 0.5s;
+}
+section.menu article.meal:nth-child(4) {
+  animation-delay: 0.75s;
+}
+section.menu article.meal div.item {
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 15px 0 12px 0;
+}
+section.menu article.meal div.item p:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+section.menu article.meal div.item p:last-child {
+  font-size: 17px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 5px;
+}
+section.menu article.meal div.price {
+  display: flex;
+  align-items: stretch;
+}
+section.menu article.meal div.price p {
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+section.menu article.meal div.price div.selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  position: relative;
+  width: 75px;
+  font-size: 25px;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s;
+  margin: 0 -75px 0 20px;
+  font-size: 28px;
+  color: white;
+}
+section.menu article.meal:hover div.price div.selected {
+  margin-right: 0;
+}
+section.menu article.meal:hover div.price div.selected i {
+  animation: rotate360 0.5s ease forwards;
+}
+section.menu button {
+  margin: 50px auto;
+  display: block;
+  padding: 17px 55px;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes showsubmenu {
+  from {
+    margin-top: 50px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 35px;
+    opacity: 1;
+  }
+}
+@keyframes showarticles {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 600px) {
+  img.main_image {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 1120px) {
+  img.main_image {
+    height: 500px;
+  }
+  section.menu {
+    border-radius: 45px 45px;
+    margin: -60px 30px 70px 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

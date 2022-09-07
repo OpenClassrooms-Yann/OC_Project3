@@ -1,0 +1,14 @@
+@import './variables';
+
+span.notification {
+    position: absolute;
+    right: 15px;
+    top:15px;
+    display: block;
+    background-color: $tertiary;
+    color:darken($color: $tertiary, $amount: 40%);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 12px 6px 12px;
+    border-radius: 2px;
+}
