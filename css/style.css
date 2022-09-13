@@ -276,7 +276,10 @@ section.restaurants article.card {
   transition: 0.2s;
   position: relative;
 }
-section.restaurants article.card img {
+section.restaurants article.card div.card--image {
+  max-height: 200px;
+}
+section.restaurants article.card div.card--image img {
   object-fit: cover;
   width: 100%;
   height: 200px;
