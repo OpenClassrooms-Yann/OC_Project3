@@ -9,7 +9,7 @@ div.loading {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  animation: show 2s cubic-bezier(0.5, 0, 1, 0) 2s forwards;
+  animation: show 2s cubic-bezier(1, 1, 1, 0.5) 2s forwards;
 }
 
 @keyframes show {
@@ -18,221 +18,22 @@ div.loading {
     visibility: visible;
   }
   100% {
-    opacity: 25%;
+    opacity: 0%;
     visibility: hidden;
   }
 }
 
-/* Loader 1 - Bowl and cube*/
-/*.loader {
-  position: relative;
-  width: 128px;
-  height: 120px;
-}
-.loader::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom right, $secondary, $primary);
-  width: 128px;
-  height: 64px;
-  border-radius: 0 0 150px 150px;
-  animation: move 0.5s linear infinite alternate;
-}
-.loader::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  background: #99e2d0;
-  width: 48px;
-  height: 48px;
-  transform: translateX(-50%) rotate(0deg);
-  animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-  100% {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-@keyframes move {
-  0% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(-10deg);
-  }
-}*/
-/* Loader 1*/
-
-/* Loader 2 - Sand timer*/
-/*.loader {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 50px;
-  height: 80px;
-  margin: auto auto;
-  border-top: 5px solid $primary;
-  border-bottom: 5px solid $primary;
-  position: relative;
-  background: linear-gradient(to top, $tertiary, $secondary) no-repeat;
-  background-size: 2px 40px;
-  background-position: 50% 0px;
-  animation: spinx 5s linear infinite;
-}
-.loader:before,
-.loader:after {
-  content: "";
-  width: 40px;
-  left: 50%;
-  height: 35px;
-  position: absolute;
-  top: 0;
-  transform: translatex(-50%);
-  background: transparent;
-  border-radius: 0 0 20px 20px;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: 0 0px;
-  animation: lqt 5s linear infinite;
-}
-.loader:after {
-  top: auto;
-  bottom: 0;
-  border-radius: 20px 20px 0 0;
-  animation: lqb 5s linear infinite;
-}
-@keyframes lqt {
-  0%,
-  100% {
-    background-image: linear-gradient($secondary 40px, transparent 0);
-    background-position: 0% 0px;
-  }
-  50% {
-    background-image: linear-gradient($secondary 40px, transparent 0);
-    background-position: 0% 40px;
-  }
-  50.1% {
-    background-image: linear-gradient($secondary 40px, transparent 0);
-    background-position: 0% -40px;
-  }
-}
-@keyframes lqb {
-  0% {
-    background-image: linear-gradient($tertiary 40px, transparent 0);
-    background-position: 0 40px;
-  }
-  100% {
-    background-image: linear-gradient($tertiary 40px, transparent 0);
-    background-position: 0 -40px;
-  }
-}
-@keyframes spinx {
-  0%,
-  49% {
-    transform: rotate(0deg);
-    background-position: 50% 36px;
-  }
-  51%,
-  98% {
-    transform: rotate(180deg);
-    background-position: 50% 4px;
-  }
-  100% {
-    transform: rotate(360deg);
-    background-position: 50% 36px;
-  }
-}*/
-/* Loader 2*/
-
-/* Loader 3 - HeartBeart*/
-/*.loader {
-  position: relative;
-  width: 40px;
-  height: 60px;
-  animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.loader:before,
-.loader:after {
-  content: "";
-  background: #9356DC ;
-  width: 40px;
-  height: 60px;
-  border-radius: 50px 50px 0 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: rotate(45deg);
-  transform-origin: 50% 68%;
-  box-shadow: 5px 4px 5px #0004 inset;
-}
-.loader:after {
-  transform: rotate(-45deg);
-}
-@keyframes heartBeat {
-  0% { transform: scale(0.95) }
-  5% { transform: scale(1.1) }
-  39% { transform: scale(0.85) }
-  45% { transform: scale(1) }
-  60% { transform: scale(0.95) }
-  100% { transform: scale(0.9) }
-}*/
-/* Loader 3*/
-
-/* Loader 4 - Elipse*/
-/*.loader {
-    position: relative;
-    margin: auto;
-    box-sizing: border-box;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #e4d5f6;
-    transform-origin: 50% 50%;
-    transform: perspective(200px) rotateX(66deg);
-    animation: spinner-wiggle 1.2s infinite;
-  }
-  .loader:before,
-  .loader:after {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 4px solid #0000;
-    animation: spinner-spin 1.2s cubic-bezier(0.6, 0.2, 0, 0.8) infinite,
-      spinner-fade 1.2s linear infinite;
-  }
-  .loader:before {
-    border-top-color: #99E2D0;
-  }
-  .loader:after {
-    border-top-color: #FF79DA;
-    animation-delay: 0.4s;
-  }
-
-  @keyframes spinner-spin {
-    100% { transform: rotate(360deg)}
-  }
-  @keyframes spinner-fade {
-    25%, 75% { opacity: 0.1}
-    50% { opacity: 1 }
-  }*/
-/* Loader 4*/
-
-/* Loader 5 - Shape*/
+/* Loader - Shape*/
 .loader {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: $primary;
+  margin: 30px;
   clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
-  animation: sh1 2s infinite cubic-bezier(0.3,1,0,1);
+  animation: shape-changer 2s infinite cubic-bezier(0.3,1,0,1);
 }
-@keyframes sh1 {
+@keyframes shape-changer {
 33% {border-radius: 0;background: $secondary ; clip-path: polygon(0 0,100% 0,100% 100%,0 100%)}
 66% {border-radius: 0;background: $tertiary ; clip-path: polygon(50% 0,50% 0,100% 100%,0 100%)}
 }
