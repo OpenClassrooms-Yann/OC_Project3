@@ -1,23 +1,37 @@
+@mixin heart {
+    content:"\f004";
+    font-family: "Font Awesome 6 Free";
+    font-size: 27px;
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to bottom, $primary, $secondary);
+    cursor: pointer;
+}
 .like {
     display: block;
     text-align: right;
     margin-right: 5px;
+    position: relative;
 
     &::before {
-        content:"\f004";
-        font-family: "Font Awesome 6 Free";
+        @include heart;
+        font-weight: 600;
+        color: transparent;
+        transform: scale(0);
+        position: absolute;
+    }
+
+    &::after {
+        @include heart;
         font-weight: 400;
-        font-size: 27px;
-        color:black;
-        transition: .4s;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient(to bottom right,$secondary, $primary);
-        cursor: pointer;
+        color: black;
     }
     
     &:hover::before {
-        font-weight: 600;
+        transform: scale(1);
+    }
+    &:hover::after {
         color: transparent;
     }
 }

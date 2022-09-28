@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-button {
+a.button, button {
   cursor: pointer;
   margin: 0 auto;
   display: block;
@@ -11,15 +11,15 @@ button {
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border: none;
   box-shadow: 0px 2px 8px 1px #b7b7b7;
-  transition: 0.2s;
+  transition: .2s;
 }
-button:hover {
+a.button:hover, button:hover {
   background: linear-gradient(to bottom right, #ff83dd, #985ede);
   box-shadow: 0px 3px 10px 2px #aaaaaa;
 }
 
 @media screen and (min-width: 1120px) {
-  button {
+  a.button, button {
     font-size: 30px;
     padding: 30px 40px;
   }
@@ -41,21 +41,38 @@ span.notification {
   display: block;
   text-align: right;
   margin-right: 5px;
+  position: relative;
 }
 .like::before {
   content: "\f004";
   font-family: "Font Awesome 6 Free";
-  font-weight: 400;
   font-size: 27px;
-  color: black;
-  transition: 0.4s;
+  transition: all .5s cubic-bezier(.075, .82, .165, 1);
   background-clip: text;
   -webkit-background-clip: text;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
   cursor: pointer;
+  font-weight: 600;
+  color: transparent;
+  transform: scale(0);
+  position: absolute;
+}
+.like::after {
+  content: "\f004";
+  font-family: "Font Awesome 6 Free";
+  font-size: 27px;
+  transition: all .5s cubic-bezier(.075, .82, .165, 1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  cursor: pointer;
+  font-weight: 400;
+  color: black;
 }
 .like:hover::before {
-  font-weight: 600;
+  transform: scale(1);
+}
+.like:hover::after {
   color: transparent;
 }
 
@@ -68,7 +85,7 @@ div.loading {
   align-items: center;
   justify-content: center;
   background-color: #fff;
-  animation: show 2s cubic-bezier(1, 0, 0.7, 0.7) 2s forwards;
+  animation: show 2s cubic-bezier(1, 0, .7, .7) 2s forwards;
 }
 
 @keyframes show {
@@ -89,7 +106,7 @@ div.loading {
   background: #9356DC;
   margin: 30px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  animation: shape-changer 2s infinite cubic-bezier(0.3, 1, 0, 1);
+  animation: shape-changer 2s infinite cubic-bezier(.3, 1, 0, 1);
 }
 
 @keyframes shape-changer {
@@ -121,12 +138,12 @@ body {
   font-family: "Shrikhand", cursive;
 }
 
-h1, h2 {
+h1, h3 {
   font-size: 28px;
   font-weight: 900;
 }
 
-h3 {
+h2 {
   font-size: 20px;
   font-weight: 300;
 }
@@ -142,42 +159,14 @@ div.section-container, .container {
 }
 
 @media screen and (min-width: 1120px) {
-  h1, h2 {
+  h1, h3 {
     font-size: 40px;
   }
-  h3 {
+  h2 {
     font-size: 28px;
   }
   div.section-container, .container {
     max-width: calc(100% - 100px);
-  }
-}
-div.location {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(234, 234, 234);
-  position: relative;
-  z-index: -1;
-  font-size: 17px;
-  font-weight: 500;
-  padding: 20px 0 15px 0;
-}
-div.location i {
-  margin-right: 20px;
-}
-
-@media screen and (min-width: 1120px) {
-  div.logo {
-    padding: 20px;
-  }
-  div.logo img {
-    width: 250px;
-  }
-  div.location {
-    font-size: 25px;
-    padding: 20px 0 15px 0;
   }
 }
 section.welcome {
@@ -191,7 +180,7 @@ section.welcome {
 section.welcome h2 {
   margin-top: 20px;
 }
-section.welcome button {
+section.welcome a.button {
   margin-top: 30px;
 }
 
@@ -210,10 +199,10 @@ section.help div.step {
   padding: 30px 40px;
   align-items: center;
   position: relative;
-  transition: 0.2s;
+  transition: .2s;
   box-shadow: 0px 5px 10px 0px #dddddd;
 }
-section.help div.step div.bullet {
+section.help div.step span.bullet {
   position: absolute;
   left: -10px;
   background-color: #9356DC;
@@ -226,17 +215,17 @@ section.help div.step div.bullet {
 }
 section.help div.step i {
   font-size: 20px;
-  transition: 0.2s;
+  transition: .2s;
 }
 section.help div.step p {
   margin-left: 20px;
   font-size: 20px;
   font-weight: 600;
 }
-section.help div.step__active, section.help div.step:hover {
+section.help div.step__active {
   background-color: #f4eefc;
 }
-section.help div.step__active i, section.help div.step:hover i {
+section.help div.step__active i {
   color: #9356DC;
 }
 
@@ -273,7 +262,7 @@ section.restaurants article.card {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0px 5px 10px 0px #dddddd;
-  transition: 0.2s;
+  transition: .2s;
   position: relative;
 }
 section.restaurants article.card div.card--image {
@@ -352,6 +341,20 @@ div.location {
 div.location i {
   margin-right: 20px;
 }
+div.location input {
+  font-family: inherit;
+  width: 120px;
+  border: 0;
+  outline: 0;
+  padding: 7px 0;
+  background: transparent;
+}
+div.location input::placeholder {
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+  opacity: 1;
+}
 
 @media screen and (min-width: 1120px) {
   div.logo {
@@ -424,11 +427,11 @@ section.menu div.heading {
   align-items: center;
 }
 section.menu div.heading h1.title {
-  font-size: 30px;
+  font-size: 28px;
 }
 section.menu div.submenu {
   margin-top: 35px;
-  animation: showsubmenu 0.5s ease forwards;
+  animation: showsubmenu .5s ease forwards;
   opacity: 0;
 }
 section.menu div.submenu:nth-child(2) {
@@ -441,7 +444,7 @@ section.menu div.submenu:nth-child(4) {
   animation-delay: calc(4 * .4s);
 }
 section.menu p.subtitle {
-  font-size: 17px;
+  font-size: 14px;
 }
 section.menu p.subtitle::after {
   content: "";
@@ -458,7 +461,7 @@ section.menu article.meal {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 5px 10px 0px #dddddd;
-  transition: all 0.25s ease-in 1.5s;
+  transition: all .25s ease-in 1.5s;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -466,7 +469,7 @@ section.menu article.meal {
   padding-left: 15px;
   margin-top: 15px;
   opacity: 0;
-  animation: showarticles 1.5s cubic-bezier(0, 0.6, 0.6, 0.8) forwards;
+  animation: showarticles 1.5s cubic-bezier(0, .6, .6, .8) forwards;
 }
 section.menu article.meal:nth-child(1) {
   animation-delay: calc((1 * .5s) / 2);
@@ -489,13 +492,13 @@ section.menu article.meal div.item {
   padding: 15px 0 12px 0;
 }
 section.menu article.meal div.item h2:first-child {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 section.menu article.meal div.item p:last-child {
-  font-size: 17px;
+  font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
   margin-top: 5px;
@@ -505,7 +508,7 @@ section.menu article.meal div.price {
   align-items: stretch;
 }
 section.menu article.meal div.price p {
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 600;
   display: flex;
   align-items: flex-end;
@@ -521,16 +524,14 @@ section.menu article.meal div.price div.selected {
   font-size: 25px;
   color: white;
   font-weight: 600;
-  transition: 0.5s;
+  transition: .5s;
   margin: 0 -75px 0 20px;
-  font-size: 28px;
-  color: white;
 }
 section.menu article.meal:hover div.price div.selected {
   margin-right: 0;
 }
 section.menu article.meal:hover div.price div.selected i {
-  animation: rotate360 0.5s ease forwards;
+  animation: rotate360 .5s ease forwards;
 }
 section.menu button {
   margin: 50px auto;
@@ -559,7 +560,7 @@ section.menu button {
 @keyframes showarticles {
   from {
     margin-top: 30px;
-    opacity: 0.3;
+    opacity: .3;
   }
   to {
     margin-top: 15px;

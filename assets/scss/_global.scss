@@ -15,12 +15,12 @@ body {
     font-family: 'Shrikhand', cursive;
 }
 
-h1, h2 {
+h1, h3 {
     font-size: 28px;
     font-weight: 900;
 }
 
-h3 {
+h2 {
     font-size: 20px;
     font-weight: 300;
 }
@@ -36,11 +36,11 @@ div.section-container, .container {
 }
 
 @media screen and (min-width: $breakpoint-l) {
-    h1, h2 {
+    h1, h3 {
         font-size: 40px;
     }
 
-    h3 {
+    h2 {
         font-size: 28px;
     }
 
