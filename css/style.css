@@ -328,7 +328,7 @@ div.logo a {
   justify-content: center;
 }
 
-div.location {
+form.location {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -340,10 +340,10 @@ div.location {
   font-weight: 500;
   padding: 20px 0 15px 0;
 }
-div.location i {
+form.location i {
   margin-right: 20px;
 }
-div.location input {
+form.location input {
   font-family: inherit;
   width: 120px;
   border: 0;
@@ -351,7 +351,7 @@ div.location input {
   padding: 7px 0;
   background: transparent;
 }
-div.location input::placeholder {
+form.location input::placeholder {
   color: #000;
   font-size: 17px;
   font-weight: 600;
